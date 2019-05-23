@@ -8,9 +8,10 @@ docker run -d --name mariadb_containier -p 50001:3306 -e MYSQL_ROOT_PASSWORD=myp
 ```
 
 b. Create Multi Container With Same Port on Container
-	2 docker run -d --name mariadb_containier_1 -p 50001:3306 -e MYSQL_ROOT_PASSWORD=mypassword mariadb
-	3 docker run -d --name mariadb_containier_2 -p 50001:3306 -e MYSQL_ROOT_PASSWORD=mypassword mariadb
-
+```bash
+docker run -d --name mariadb_containier_1 -p 50001:3306 -e MYSQL_ROOT_PASSWORD=mypassword mariadb
+docker run -d --name mariadb_containier_2 -p 50001:3306 -e MYSQL_ROOT_PASSWORD=mypassword mariadb
+```
 c. Stop And Start Container
 	- docker stop <name container>
 	- docker start <name container>
