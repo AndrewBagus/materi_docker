@@ -6,4 +6,5 @@ Pembahasan
 3. docker Volume
 4. dockerfile
 5. asp running on docker
-6. docker compose
+6. connecting with mysql
+7. docker compose
