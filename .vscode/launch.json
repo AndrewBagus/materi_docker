@@ -4,19 +4,19 @@
    // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
-   {
-       "name": "Docker: Launch .NET Core (Preview)",
-       "type": "docker-coreclr",
-       "request": "launch",
-       "preLaunchTask": "build",
-       "dockerBuild": {},
-       "dockerRun": {
-           "ports": [{
-               "hostPort": "51234",
-               "containerPort": "80"
-           }]
-       }
-   },
+       {
+           "name": "Docker: Launch .NET Core (Preview)",
+           "type": "docker-coreclr",
+           "request": "launch",
+           "preLaunchTask": "build",
+           "dockerBuild": {},
+           "dockerRun": {
+               "ports": [{
+                   "containerPort": "80",
+                   "hostPort": "51234"
+               }]
+           }
+       },
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
