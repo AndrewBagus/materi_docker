@@ -10,7 +10,10 @@ services:
     
   webapi:
     container_name: webapi_run
-    image: webapi:latest
+    image: webapi
+    build: 
+      context: . 
+      dockerfile: Dockerfile
     ports: 
       - "51234:80"
     links: 
