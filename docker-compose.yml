@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mariadb_docker:
+    container_name: mariadb_docker
+    image: mariadb
+    environment: 
+      MYSQL_ROOT_PASSWORD: mypassword
+    ports: 
+      - "50001:3306"
+    
+  webapi:
+    container_name: webapi_run
+    image: webapi:latest
+    ports: 
+      - "51234:80"
+    links: 
+      - mariadb_docker

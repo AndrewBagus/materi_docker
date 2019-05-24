@@ -1,19 +1,26 @@
 Materi docker ini untuk RAY talk tanggal 24 mei 2019
 
-Pembahasan step-06 asp.net core running on docker
+Pembahasan step-07 docker compose
 
 Build Dockerfile to Docker Image
 ```bash
 docker build -t webapi:latest .
 ```
 
-Run mariadb image
+Run docker compose
 ```bash
-docker run -d --name=mariadb_docker -p 50001:3306 -e MYSQL_ROOT_PASSWORD=mypassword mariadb
+docker-compose up
 ```
-
-Run asp.net core image
+Or run docker compose in detach mode
 ```bash
-docker run -d --name webapi_run -p 51234:80 --link mariadb_docker webapi
+docker-compose up -d
+```
+Stop docker compose
+```bash
+docker-compose stop
+```
+Or Stop docker compose and remove container
+```bash
+docker-compose rm -s
 ```
 
