@@ -1,12 +1,13 @@
 Materi docker ini untuk RAY talk tanggal 24 mei 2019
 
-Pembahasan step-07 docker compose
-
+Pembahasan step-08 docker compose connect with network
+//////////////////////////////////////////////////////
+Still Not Working
+//////////////////////////////////////////////////////
 Build Dockerfile to Docker Image
 ```bash
 docker build -t webapi:latest .
 ```
-
 Run docker compose
 ```bash
 docker-compose up

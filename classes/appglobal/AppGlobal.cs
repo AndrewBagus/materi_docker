@@ -11,7 +11,7 @@ namespace appglobal
     internal static string DEFAULT_SECRET = "gls_cloud_api";
     internal static string BASE_URL = "";
     internal static string LOG_DIR = @"./LOGS";
-    internal static string MYSQL_CS = "Server=mariadb_docker;Database=web_api;Uid=root;Pwd=mypassword";
+    internal static string MYSQL_CS = "Server=sql;Database=web_api;Uid=root;Pwd=mypassword";
     internal static string OVERRIDE_CS = "";
     internal static string OVERRIDE_TM = "";
 
