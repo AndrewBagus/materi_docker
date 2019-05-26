@@ -14,7 +14,8 @@
                "ports": [{
                    "containerPort": "80",
                    "hostPort": "51234"
-               }]
+               }],
+               "network": "db"
            }
        },
         {

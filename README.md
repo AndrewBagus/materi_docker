@@ -1,23 +1,31 @@
-Materi docker ini untuk RAY talk tanggal 24 mei 2019
+Materi docker ini untuk RAY talk tanggal 26 mei 2019 (update)
 
-Pembahasan step-08 docker compose : asp.net core connect with private mariadb in network
+Pembahasan step-09 setup asp.net connect with mariadb via network
 
-Build Dockerfile to Docker Image
+Create docker network
+```bash
+docker network create db
+```
 
-Run docker compose
+Create and run mysql
 ```bash
-docker-compose up --build
+docker run -d -p 50001:3306 --name=sql -e MYSQL_ROOT_PASSWORD=mypassword --network=db mariadb
 ```
-Or run docker compose in detach mode
+
+Install docker extention for vs code
+
+add Docker: Launch .NET core (Preview) at vscode debugger
+
+Change launch.json
 ```bash
-docker-compose up -d --build
+"dockerRun": {
+               "ports": [{
+                   "containerPort": "80",
+                   "hostPort": "51234"
+               }],
+               "network": "db"
+           }
 ```
-Stop docker compose
-```bash
-docker-compose stop
-```
-Or Stop docker compose and remove container
-```bash
-docker-compose rm -s
-```
+
+Run from vscode with f5
 
