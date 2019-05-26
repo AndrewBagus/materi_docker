@@ -1,20 +1,16 @@
 Materi docker ini untuk RAY talk tanggal 24 mei 2019
 
-Pembahasan step-08 docker compose connect with network
-//////////////////////////////////////////////////////
-Still Not Working
-//////////////////////////////////////////////////////
+Pembahasan step-08 docker compose : asp.net core connect with private mariadb in network
+
 Build Dockerfile to Docker Image
-```bash
-docker build -t webapi:latest .
-```
+
 Run docker compose
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 Or run docker compose in detach mode
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 Stop docker compose
 ```bash
