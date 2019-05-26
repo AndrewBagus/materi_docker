@@ -1,5 +1,16 @@
 version: "3"
 services:
+  sql:
+    container_name: mariadb_c
+    image: mariadb
+    environment: 
+      MYSQL_ROOT_PASSWORD: mypassword
+    networks: 
+      db:
+        aliases:
+          - sql
+    restart: always
+    
   webapi:
     container_name: webapi_run
     image: webapi
@@ -8,19 +19,11 @@ services:
       dockerfile: Dockerfile
     ports: 
       - "51234:80"
+    restart: on-failure
     networks: 
       - web
       - db
-      
-  mariadb_docker:
-    container_name: mariadb_docker
-    image: mariadb
-    environment: 
-      MYSQL_ROOT_PASSWORD: mypassword
-    networks: 
-      db:
-        aliases:
-          - sql
+
 networks:
   web:
   db:
