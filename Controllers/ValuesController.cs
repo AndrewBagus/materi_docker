@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using appglobal;
 using Microsoft.AspNetCore.Mvc;
 
 namespace materi_docker.Controllers
@@ -14,7 +15,9 @@ namespace materi_docker.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            webapi_db _context = new webapi_db(AppGlobal.get_db_option());
+            var data = _context.m_bulan.ToList();
+            return new string[] { data[0].m_bulan_nama, data[1].m_bulan_nama };
         }
 
         // GET api/values/5

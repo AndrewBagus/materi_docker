@@ -1,8 +1,8 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM 172.16.200.127:5000/aspnetcore-runtime21 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/dotnet:2.1-sdk AS build
+FROM 172.16.200.127:5000/dotnetsdk21 AS build
 WORKDIR /src
 COPY ["materi_docker.csproj", "./"]
 RUN dotnet restore "./materi_docker.csproj"

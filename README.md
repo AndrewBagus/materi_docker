@@ -1,9 +1,9 @@
 Materi docker ini untuk RAY talk (update)
 
-Pembahasan step-10 asp.net core and nginx
+Pembahasan step-10 Docker Compose : Running image from private registry
 
-Build Dockerfile to Docker Image
+Run Docker Compose
 ```bash
-docker build -t webapi:latest .
+docker-compose up -d
 ```
 

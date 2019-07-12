@@ -2,7 +2,7 @@ version: "3"
 services:
   mariadb_docker:
     container_name: mariadb_docker
-    image: mariadb
+    image: 172.16.200.127:5000/mariadb-pds
     environment: 
       MYSQL_ROOT_PASSWORD: mypassword
     ports: 
@@ -10,10 +10,8 @@ services:
     
   webapi:
     container_name: webapi_run
-    image: webapi
-    build: 
-      context: . 
-      dockerfile: Dockerfile
+    image: 172.16.200.127:5000/dotnet-initbuild-2
+    restart: always
     ports: 
       - "51234:80"
     links: 
